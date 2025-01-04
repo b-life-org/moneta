@@ -1,0 +1,66 @@
+{
+  "version": "4",
+  "specifiers": {
+    "jsr:@std/assert@^1.0.10": "1.0.10",
+    "jsr:@std/internal@^1.0.5": "1.0.5",
+    "npm:@dinero.js/calculator-bigint@alpha": "2.0.0-alpha.14",
+    "npm:dinero.js@2.0.0-alpha.14": "2.0.0-alpha.14",
+    "npm:fast-check@*": "3.23.2"
+  },
+  "jsr": {
+    "@std/assert@1.0.10": {
+      "integrity": "59b5cbac5bd55459a19045d95cc7c2ff787b4f8527c0dd195078ff6f9481fbb3",
+      "dependencies": [
+        "jsr:@std/internal"
+      ]
+    },
+    "@std/internal@1.0.5": {
+      "integrity": "54a546004f769c1ac9e025abd15a76b6671ddc9687e2313b67376125650dc7ba"
+    }
+  },
+  "npm": {
+    "@dinero.js/calculator-bigint@2.0.0-alpha.14": {
+      "integrity": "sha512-kWrx49us3Plhdc2UbfrH7XqiOlSUFUIvRHTwzFpuKKTRhwJ5XJppSsl2ZzXeM2IgtaDKzgY2YoSci1dnExE7mQ==",
+      "dependencies": [
+        "@dinero.js/core"
+      ]
+    },
+    "@dinero.js/calculator-number@2.0.0-alpha.14": {
+      "integrity": "sha512-Vmlu6eXNtkFU2cqlrpqfq8KQP9onALf8Es2d34liVa3k3RHjuhizgFUU3V3/tsjOu5WekZq+gYPOr58XVTkB7A==",
+      "dependencies": [
+        "@dinero.js/core"
+      ]
+    },
+    "@dinero.js/core@2.0.0-alpha.14": {
+      "integrity": "sha512-CtKELJ783joUbaU62fRM2xDXb4XYSy0MgOuIkPWgVOS3SYKKb6+2Ec9bNlvrW8lsPROz/RsvCuYVTphrZ79twg==",
+      "dependencies": [
+        "@dinero.js/currencies"
+      ]
+    },
+    "@dinero.js/currencies@2.0.0-alpha.14": {
+      "integrity": "sha512-Ck5ZLjRI7Pl7Y4VkeOst4WEwiN5vZezv8GHcXWsVLUfTNsmkV37VeLYDRAuTUP4akEJyIry+1o1qHYNtLq3eNw=="
+    },
+    "dinero.js@2.0.0-alpha.14": {
+      "integrity": "sha512-dkURHd9P+2TjuSTMUAnvrB7SsL4GbBYG/WPtIBV8M+L7Xf80x84sJcUUTxIS33S4AlkIbVANlaL86w2g5zdrmg==",
+      "dependencies": [
+        "@dinero.js/calculator-number",
+        "@dinero.js/core",
+        "@dinero.js/currencies"
+      ]
+    },
+    "fast-check@3.23.2": {
+      "integrity": "sha512-h5+1OzzfCC3Ef7VbtKdcv7zsstUQwUDlYpUTvjeUsJAssPgLn7QzbboPtL5ro04Mq0rPOsMzl7q5hIbRs2wD1A==",
+      "dependencies": [
+        "pure-rand"
+      ]
+    },
+    "pure-rand@6.1.0": {
+      "integrity": "sha512-bVWawvoZoBYpp6yIoQtQXHZjmz35RSVHnUOTefl8Vcjr8snTPY1wnpSPMWekcFwbxI6gtmT7rSYPFvz71ldiOA=="
+    }
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@std/assert@^1.0.10"
+    ]
+  }
+}

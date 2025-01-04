@@ -1,0 +1,17 @@
+{
+  "deno.enable": true, // enables extension
+  "deno.lint": true,
+  "deno.codeLens.test": true,
+  "deno.documentPreloadLimit": 2000,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "denoland.vscode-deno",
+  "[typescript]": {
+    "editor.defaultFormatter": "denoland.vscode-deno"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "denoland.vscode-deno"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "denoland.vscode-deno"
+  }
+}
