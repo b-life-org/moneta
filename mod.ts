@@ -1,6 +1,6 @@
-export { Moneta } from "./helpers/createMoneta.ts";
-export * from "./api/index.ts";
-export * from "./currencies/index.ts";
-export * from "./types/types.ts";
-export * from "./utils/index.ts";
-export * from "./divide/index.ts";
+export { Moneta } from "./src/helpers/createMoneta.ts";
+export * from "./src/api/index.ts";
+export * from "./src/currencies/index.ts";
+export * from "./src/types/types.ts";
+export * from "./src/utils/index.ts";
+export * from "./src/divide/index.ts";

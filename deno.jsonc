@@ -1,5 +1,5 @@
 {
-  "name": "@b-life/moneta",
+  "name": "@b-life-org/moneta",
   "version": "0.0.1",
   "exports": "./mod.ts",
   "lock": false,

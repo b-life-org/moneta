@@ -26,6 +26,6 @@ same. Switching from one to another is easier.
 
 ## Links
 
-[Dinero.js](https://v2.dinerojs.com/docs)
-[Martin Fowler's money pattern](https://martinfowler.com/eaaCatalog/money.html)
-[Money PHP](https://www.moneyphp.org/en/stable/#)
+- [Dinero.js](https://v2.dinerojs.com/docs)
+- [Martin Fowler's money pattern](https://martinfowler.com/eaaCatalog/money.html)
+- [Money PHP](https://www.moneyphp.org/en/stable/#)

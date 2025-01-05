@@ -1,8 +1,20 @@
 import { add, createDinero, dinero } from "npm:dinero.js@2.0.0-alpha.14";
 import { calculator } from "npm:@dinero.js/calculator-bigint@alpha";
 import { add as add_moneta } from "../mod.ts";
-import { USD } from "../currencies/usd.ts";
+import { USD } from "../src/currencies/usd.ts";
 import { Moneta } from "../mod.ts";
+import { Currency, Money } from "jsr:@dnl-fm/money-ts";
+
+Currency.loadIsoCurrencies([
+  {
+    code: "USD",
+    numericCode: 840,
+    name: "US Dollar",
+    defaultFractionDigits: 2,
+  },
+]);
+
+const usd_money = Currency.of("USD");
 
 const USD_Bigint = {
   code: "USD",
@@ -35,6 +47,13 @@ Deno.bench("Dinero.js : bigint", { group: "add 2 objects" }, () => {
   const d2 = dineroBigint({ amount: 100n, currency: USD_Bigint });
 
   add(d1, d2); // a Dinero object with amount `600n`
+});
+
+Deno.bench("Money ts", { group: "add 2 objects" }, () => {
+  const paycheck = Money.of(500, usd_money);
+  const bonus = Money.of(100, usd_money);
+
+  paycheck.plus(bonus);
 });
 
 /*
