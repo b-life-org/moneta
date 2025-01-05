@@ -37,7 +37,7 @@ export type TransformScaleParams = readonly [
  */
 export const transformScale = (
   ...[monetaObject, newScale, divide = down]: TransformScaleParams
-) => {
+): Moneta => {
   const { amount, currency, scale } = monetaObject;
 
   const isLarger = newScale > scale;

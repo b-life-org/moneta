@@ -56,12 +56,12 @@ export class Moneta {
   }
 
   /** Get the amount of a Moneta object in a stringified decimal representation. */
-  toDecimal() {
+  toDecimal(): string {
     return toDecimal(this);
   }
 
   /** Print Moneta object as a string with it currency and amount with decimal.  */
-  toString() {
+  toString(): string {
     return toString(this);
   }
 
