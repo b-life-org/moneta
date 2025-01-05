@@ -1,7 +1,6 @@
-import { down } from "../divide/down.ts";
-import { Moneta } from "../../mod.ts";
+import { computeBase, Moneta } from "../../mod.ts";
 import { DivideOperation } from "../types/types.ts";
-import { computeBase } from "../utils/index.ts";
+import { down } from "../divide/down.ts";
 
 export type TransformScaleParams = readonly [
   dineroObject: Moneta,
@@ -36,7 +35,7 @@ export type TransformScaleParams = readonly [
  * transformScale(d, 2, up); // a Moneta object with amount 1046 and scale 2
  */
 export const transformScale = (
-  ...[monetaObject, newScale, divide = down]: TransformScaleParams
+  ...[monetaObject, newScale, divide]: TransformScaleParams
 ): Moneta => {
   const { amount, currency, scale } = monetaObject;
 
@@ -52,7 +51,11 @@ export const transformScale = (
     newAmount *= BigInt(factor);
   } else {
     // divide
-    newAmount = divide(amount, factor);
+    if (divide) {
+      newAmount = divide(amount, factor);
+    } else {
+      newAmount = down(amount, factor);
+    }
   }
 
   return new Moneta({
