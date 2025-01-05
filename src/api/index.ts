@@ -1,7 +1,12 @@
+/**
+ * Export all api functions
+ * @module api
+ */
+
 export * from "./add.ts";
 export * from "./allocate.ts";
 export * from "./equal.ts";
-// export * from "./hasSubUnits.ts";
+export * from "./hasSubUnits.ts";
 export * from "./haveSameAmount.ts";
 export * from "./haveSameCurrency.ts";
 export * from "./multiply.ts";

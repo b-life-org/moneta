@@ -1,3 +1,8 @@
+/**
+ * Export all util functions
+ * @module utils
+ */
+
 export * from "./absolute.ts";
 export * from "./computeBase.ts";
 export * from "./countTrailingZeros.ts";

@@ -1,3 +1,7 @@
+/**
+ * Example of how to use the Moneta library.
+ * @module example
+ */
 import {
   add,
   allocate,
@@ -15,7 +19,7 @@ import {
   trimScale,
   up,
   USD,
-} from "./mod.ts";
+} from "./mod.ts"; // "jsr:@b-life-org/moneta";
 
 // examples
 const example1 = () => {

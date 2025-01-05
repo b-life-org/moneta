@@ -1,3 +1,8 @@
+/**
+ * Export all divide functions
+ * @module divide
+ */
+
 export * from "./down.ts";
 export * from "./halfAwayFromZero.ts";
 export * from "./halfDown.ts";

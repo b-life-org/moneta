@@ -1,3 +1,8 @@
+/**
+ * Provide all the types used in the library.
+ * @module
+ */
+
 export type Currency = {
   /**
    * The unique code of the currency.
