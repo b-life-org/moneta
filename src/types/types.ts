@@ -3,6 +3,9 @@
  * @module
  */
 
+/**
+ * Currency type
+ */
 export type Currency = {
   /**
    * The unique code of the currency.
@@ -23,30 +26,55 @@ export type Currency = {
   readonly exponent: number;
 };
 
+/**
+ * Divide Operation function
+ *
+ * Use for transformScale when reduce the scale
+ */
 export type DivideOperation = (
   amount: bigint,
   factor: number,
 ) => bigint;
 
+/**
+ * Scale Amount
+ */
 export type ScaledAmount = {
+  /** Amount */
   readonly amount: bigint;
+  /** Scale */
   readonly scale?: number;
 };
 
+/**
+ * Rate is a ScaledAmount or a number
+ */
 export type Rate = ScaledAmount | number;
 
+/**
+ * Rates is a Record of Rate
+ */
 export type Rates = Record<string, Rate>;
 
+/**
+ * Formatter for Moneta
+ */
 export type Formatter = {
   readonly toNumber: (value?: bigint) => number;
   readonly toString: (value?: bigint) => string;
 };
 
+/**
+ * TransformerOptions
+ */
 export type TransformerOptions<TValue> = {
   readonly value: TValue;
   readonly currency: Currency;
 };
 
+/**
+ * Transformer
+ */
 export type Transformer<TOutput, TValue> = (
   options: TransformerOptions<TValue>,
 ) => TOutput;

@@ -1,15 +1,8 @@
 import { computeBase, Moneta } from "../../mod.ts";
-import { DivideOperation } from "../types/types.ts";
 import { down } from "../divide/down.ts";
 
-export type TransformScaleParams = readonly [
-  dineroObject: Moneta,
-  newScale: number,
-  divide?: DivideOperation,
-];
-
 /**
- * Transform a Dinero object to a new scale.
+ * Transform a Moneta object to a new scale.
  *
  * When transforming to a higher scale, the internal amount value increases by orders of magnitude. If you're using the default Dinero.js implementation (with the number calculator), be careful not to exceed the minimum and maximum safe integers.
  *
@@ -35,7 +28,9 @@ export type TransformScaleParams = readonly [
  * transformScale(d, 2, up); // a Moneta object with amount 1046 and scale 2
  */
 export const transformScale = (
-  ...[monetaObject, newScale, divide]: TransformScaleParams
+  monetaObject: Moneta,
+  newScale: number,
+  divide = down,
 ): Moneta => {
   const { amount, currency, scale } = monetaObject;
 
@@ -50,12 +45,7 @@ export const transformScale = (
     // multiply
     newAmount *= BigInt(factor);
   } else {
-    // divide
-    if (divide) {
-      newAmount = divide(amount, factor);
-    } else {
-      newAmount = down(amount, factor);
-    }
+    newAmount = divide(amount, factor);
   }
 
   return new Moneta({
